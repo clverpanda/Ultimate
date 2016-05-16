@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="cn.clverpanda.vo.UserEntity" table="user" schema="ultimate">
+    <class name="org.vo.UserEntity" table="user" schema="ultimate">
         <id name="userid" column="userid"/>
         <property name="username" column="username"/>
         <property name="password" column="password"/>

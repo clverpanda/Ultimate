@@ -1,4 +1,4 @@
-package cn.clverpanda.vo;
+package org.vo;
 
 /**
  * Created by miaol on 2016/5/16 0016.

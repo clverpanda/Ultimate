@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="cn.clverpanda.vo.UserRoleEntity" table="user_role" schema="ultimate">
+    <class name="org.vo.UserRoleEntity" table="user_role" schema="ultimate">
         <id name="userid" column="userid"/>
         <property name="role" column="role"/>
     </class>

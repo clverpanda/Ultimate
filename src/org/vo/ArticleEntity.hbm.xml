@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="cn.clverpanda.vo.ArticleEntity" table="article" schema="ultimate">
+    <class name="org.vo.ArticleEntity" table="article" schema="ultimate">
         <id name="articleId" column="article_id"/>
         <property name="title" column="title"/>
         <property name="content" column="content"/>

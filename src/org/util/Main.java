@@ -1,3 +1,5 @@
+package org.util;
+
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.Session;

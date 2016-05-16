@@ -1,4 +1,4 @@
-package cn.clverpanda.vo;
+package org.vo;
 
 import java.sql.Timestamp;
 
