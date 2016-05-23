@@ -10,19 +10,13 @@
     <meta name="author" content="">
 
     <title>Article</title>
-    <style>
-     .contain{
-      margin-left: 15%;
-      margin-right: 15%;
-      margin-top: 3%;
-     }
-    </style>
+
 
     <!-- Bootstrap core CSS -->
     <link href="Css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="Css/blog.css" rel="stylesheet">
+    <link href="Css/main.css" rel="stylesheet">
     <link href="Css/article.css" rel="stylesheet">
    
     <link rel="stylesheet" href="semantic-ui/semantic/dist/semantic.min.css">
