@@ -9,8 +9,9 @@
             <column name="id"/>
             <generator class="identity"/>
         </id>
-        <property name="articleId" column="article_id"/>
-        <property name="userId" column="user_id"/>
         <property name="content" column="content"/>
+
+        <many-to-one name="user" column="user_id" class="org.vo.UserRoleEntity"/>
+        <many-to-one name="article" column="article_id" class="org.vo.ArticleEntity"/>
     </class>
 </hibernate-mapping>

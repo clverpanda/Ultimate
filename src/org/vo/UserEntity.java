@@ -14,13 +14,41 @@ public class UserEntity {
     private String image;
     private Timestamp lastupdatetime;
     private UserRoleEntity role;
-    private Set collects = new HashSet();
-//
-    public Set getCollects() {
+    private Set<ArticleEntity> collects = new HashSet<>();
+    private Set<UserEntity> follows = new HashSet<>();
+    private Set<CommentEntity> comments = new HashSet<>();
+    private Set<AssessEntity> assesses = new HashSet<>();
+
+    public Set<CommentEntity> getComments() {
+        return comments;
+    }
+
+    public void setComments(Set<CommentEntity> comments) {
+        this.comments = comments;
+    }
+
+    public Set<AssessEntity> getAssesses() {
+        return assesses;
+    }
+
+    public void setAssesses(Set<AssessEntity> assesses) {
+        this.assesses = assesses;
+    }
+
+    public Set<UserEntity> getFollows() {
+
+        return follows;
+    }
+
+    public void setFollows(Set<UserEntity> follows) {
+        this.follows = follows;
+    }
+
+    public Set<ArticleEntity> getCollects() {
         return collects;
     }
 
-    public void setCollects(Set collects) {
+    public void setCollects(Set<ArticleEntity> collects) {
         this.collects = collects;
     }
 

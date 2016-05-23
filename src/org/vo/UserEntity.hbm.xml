@@ -17,9 +17,25 @@
             <type name="java.sql.Timestamp"/>
         </property>
         <one-to-one name="role" class="org.vo.UserRoleEntity" cascade="all" lazy="false"/>
+        
         <set name="collects" table="collect" lazy="true" cascade="all">
             <key column="userid"/>
             <many-to-many class="org.vo.ArticleEntity" column="article_id"/>
+        </set>
+
+        <set name="follows" table="follow" lazy="true" cascade="all">
+            <key column="userid"/>
+            <many-to-many class="org.vo.UserEntity" column="follow_userid"/>
+        </set>
+        
+        <set name="comments" cascade="all">
+            <key column="user_id"/>
+            <one-to-many class="org.vo.CommentEntity"/>
+        </set>
+
+        <set name="assesses" cascade="all">
+            <key column="user_id"/>
+            <one-to-many class="org.vo.AssessEntity"/>
         </set>
     </class>
 </hibernate-mapping>

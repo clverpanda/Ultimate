@@ -5,9 +5,25 @@ package org.vo;
  */
 public class AssessEntity {
     private int id;
-    private int articleId;
-    private int userId;
     private int assess;
+    private UserEntity user;
+    private ArticleEntity article;
+
+    public UserEntity getUser() {
+        return user;
+    }
+
+    public void setUser(UserEntity user) {
+        this.user = user;
+    }
+
+    public ArticleEntity getArticle() {
+        return article;
+    }
+
+    public void setArticle(ArticleEntity article) {
+        this.article = article;
+    }
 
     public int getId() {
         return id;
@@ -17,21 +33,6 @@ public class AssessEntity {
         this.id = id;
     }
 
-    public int getArticleId() {
-        return articleId;
-    }
-
-    public void setArticleId(int articleId) {
-        this.articleId = articleId;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
 
     public int getAssess() {
         return assess;
@@ -49,8 +50,6 @@ public class AssessEntity {
         AssessEntity that = (AssessEntity) o;
 
         if (id != that.id) return false;
-        if (articleId != that.articleId) return false;
-        if (userId != that.userId) return false;
         if (assess != that.assess) return false;
 
         return true;
@@ -59,8 +58,6 @@ public class AssessEntity {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + articleId;
-        result = 31 * result + userId;
         result = 31 * result + assess;
         return result;
     }

@@ -5,18 +5,34 @@
 <hibernate-mapping>
 
     <class name="org.vo.ArticleEntity" table="article" schema="ultimate">
-        <id name="articleId" column="article_id"/>
-        <property name="title" column="title"/>
-        <property name="content" column="content"/>
-        <property name="text" column="text"/>
+        <id name="articleId">
+            <column name="article_id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="title" column="title" not-null="true"/>
+        <property name="content" column="content" not-null="true"/>
+        <property name="text" column="context" not-null="true"/>
         <property name="download" column="download"/>
         <!--<property name="authorId" column="author_id"/>-->
         <property name="publishtime" column="publishtime"/>
-        <property name="check" column="check"/>
+        <property name="check" type="java.lang.Boolean">
+            <column name="isChecked" not-null="true"/>
+        </property>
         <many-to-one name="author" column="author_id" class="org.vo.UserEntity" cascade="all"/>
+
         <set name="lables">
             <key column="article_id"/>
             <one-to-many class="org.vo.LableEntity"/>
+        </set>
+
+        <set name="comments" cascade="all">
+            <key column="article_id"/>
+            <one-to-many class="org.vo.CommentEntity"/>
+        </set>
+
+        <set name="assesses" cascade="all">
+            <key column="article_id"/>
+            <one-to-many class="org.vo.AssessEntity"/>
         </set>
     </class>
 </hibernate-mapping>

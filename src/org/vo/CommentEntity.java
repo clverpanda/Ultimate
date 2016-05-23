@@ -5,9 +5,25 @@ package org.vo;
  */
 public class CommentEntity {
     private int id;
-    private int articleId;
-    private int userId;
     private String content;
+    private UserEntity user;
+    private ArticleEntity article;
+
+    public UserEntity getUser() {
+        return user;
+    }
+
+    public void setUser(UserEntity user) {
+        this.user = user;
+    }
+
+    public ArticleEntity getArticle() {
+        return article;
+    }
+
+    public void setArticle(ArticleEntity article) {
+        this.article = article;
+    }
 
     public int getId() {
         return id;
@@ -15,22 +31,6 @@ public class CommentEntity {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getArticleId() {
-        return articleId;
-    }
-
-    public void setArticleId(int articleId) {
-        this.articleId = articleId;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
     }
 
     public String getContent() {
@@ -49,8 +49,8 @@ public class CommentEntity {
         CommentEntity that = (CommentEntity) o;
 
         if (id != that.id) return false;
-        if (articleId != that.articleId) return false;
-        if (userId != that.userId) return false;
+        if (user != that.user) return false;
+        if (article != that.article) return false;
         if (content != null ? !content.equals(that.content) : that.content != null) return false;
 
         return true;
@@ -59,8 +59,6 @@ public class CommentEntity {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + articleId;
-        result = 31 * result + userId;
         result = 31 * result + (content != null ? content.hashCode() : 0);
         return result;
     }

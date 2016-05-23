@@ -17,13 +17,31 @@ public class ArticleEntity {
     private Timestamp publishtime;
     private boolean check;
     private UserEntity author;
-    private Set lables = new HashSet();
+    private Set<LableEntity> lables = new HashSet<>();
+    private Set<CommentEntity> comments = new HashSet<>();
+    private Set<AssessEntity> assesses = new HashSet<>();
 
-    public Set getLables() {
+    public Set<CommentEntity> getComments() {
+        return comments;
+    }
+
+    public void setComments(Set<CommentEntity> comments) {
+        this.comments = comments;
+    }
+
+    public Set<AssessEntity> getAssesses() {
+        return assesses;
+    }
+
+    public void setAssesses(Set<AssessEntity> assesses) {
+        this.assesses = assesses;
+    }
+
+    public Set<LableEntity> getLables() {
         return lables;
     }
 
-    public void setLables(Set lables) {
+    public void setLables(Set<LableEntity> lables) {
         this.lables = lables;
     }
 
