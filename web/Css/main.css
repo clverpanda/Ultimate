@@ -6,6 +6,11 @@ body {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: #555;
 }
+.contain{
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 3%;
+}
 
 h1, .h1,
 h2, .h2,
