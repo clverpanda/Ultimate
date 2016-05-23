@@ -1,6 +1,8 @@
 package org.vo;
 
 import java.sql.Timestamp;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by miaol on 2016/5/16 0016.
@@ -11,9 +13,27 @@ public class ArticleEntity {
     private String content;
     private String text;
     private String download;
-    private int authorId;
+    //private int authorId;
     private Timestamp publishtime;
     private boolean check;
+    private UserEntity author;
+    private Set lables = new HashSet();
+
+    public Set getLables() {
+        return lables;
+    }
+
+    public void setLables(Set lables) {
+        this.lables = lables;
+    }
+
+    public UserEntity getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(UserEntity author) {
+        this.author = author;
+    }
 
     public int getArticleId() {
         return articleId;
@@ -55,13 +75,13 @@ public class ArticleEntity {
         this.download = download;
     }
 
-    public int getAuthorId() {
-        return authorId;
-    }
-
-    public void setAuthorId(int authorId) {
-        this.authorId = authorId;
-    }
+//    public int getAuthorId() {
+//        return authorId;
+//    }
+//
+//    public void setAuthorId(int authorId) {
+//        this.authorId = authorId;
+//    }
 
     public Timestamp getPublishtime() {
         return publishtime;
@@ -87,7 +107,7 @@ public class ArticleEntity {
         ArticleEntity that = (ArticleEntity) o;
 
         if (articleId != that.articleId) return false;
-        if (authorId != that.authorId) return false;
+        //if (authorId != that.authorId) return false;
         if (check != that.check) return false;
         if (title != null ? !title.equals(that.title) : that.title != null) return false;
         if (content != null ? !content.equals(that.content) : that.content != null) return false;
@@ -105,7 +125,7 @@ public class ArticleEntity {
         result = 31 * result + (content != null ? content.hashCode() : 0);
         result = 31 * result + (text != null ? text.hashCode() : 0);
         result = 31 * result + (download != null ? download.hashCode() : 0);
-        result = 31 * result + authorId;
+        //result = 31 * result + authorId;
         result = 31 * result + (publishtime != null ? publishtime.hashCode() : 0);
         result = 31 * result + (check ? 1 : 0);
         return result;

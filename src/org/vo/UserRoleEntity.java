@@ -6,6 +6,15 @@ package org.vo;
 public class UserRoleEntity {
     private int userid;
     private int role;
+    private UserEntity user;
+
+    public UserEntity getUser() {
+        return user;
+    }
+
+    public void setUser(UserEntity user) {
+        this.user = user;
+    }
 
     public int getUserid() {
         return userid;

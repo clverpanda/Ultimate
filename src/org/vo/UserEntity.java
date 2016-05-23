@@ -1,6 +1,8 @@
 package org.vo;
 
 import java.sql.Timestamp;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by miaol on 2016/5/16 0016.
@@ -11,6 +13,24 @@ public class UserEntity {
     private String password;
     private String image;
     private Timestamp lastupdatetime;
+    private UserRoleEntity role;
+    private Set collects = new HashSet();
+
+    public Set getCollects() {
+        return collects;
+    }
+
+    public void setCollects(Set collects) {
+        this.collects = collects;
+    }
+
+    public UserRoleEntity getRole() {
+        return role;
+    }
+
+    public void setRole(UserRoleEntity role) {
+        this.role = role;
+    }
 
     public int getUserid() {
         return userid;

@@ -5,7 +5,13 @@
 <hibernate-mapping>
 
     <class name="org.vo.UserRoleEntity" table="user_role" schema="ultimate">
-        <id name="userid" column="userid"/>
+        <id name="userid">
+            <column name="userid"/>
+            <generator class="foreign">
+                <param name="property">user</param>
+            </generator>
+        </id>
+        <one-to-one name="user" class="org.vo.UserEntity" constrained="true"/>
         <property name="role" column="role"/>
     </class>
 </hibernate-mapping>

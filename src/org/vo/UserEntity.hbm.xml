@@ -5,10 +5,21 @@
 <hibernate-mapping>
 
     <class name="org.vo.UserEntity" table="user" schema="ultimate">
-        <id name="userid" column="userid"/>
+        <id name="userid">
+            <column name="userid" />
+            <generator class="identity"/>
+        </id>
         <property name="username" column="username"/>
         <property name="password" column="password"/>
         <property name="image" column="image"/>
-        <property name="lastupdatetime" column="lastupdatetime"/>
+        <property name="lastupdatetime">
+            <column name="lastupdatetime"/>
+            <type name="java.sql.Timestamp"/>
+        </property>
+        <one-to-one name="role" class="org.vo.UserRoleEntity" cascade="all" lazy="false"/>
+        <set name="collects" table="collect" lazy="true" cascade="all">
+            <key column="userid"/>
+            <many-to-many class="org.vo.ArticleEntity" column="article_id"/>
+        </set>
     </class>
 </hibernate-mapping>

@@ -5,7 +5,10 @@
 <hibernate-mapping>
 
     <class name="org.vo.AssessEntity" table="assess" schema="ultimate">
-        <id name="id" column="id"/>
+        <id name="id">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
         <property name="articleId" column="article_id"/>
         <property name="userId" column="user_id"/>
         <property name="assess" column="assess"/>

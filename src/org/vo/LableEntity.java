@@ -5,8 +5,17 @@ package org.vo;
  */
 public class LableEntity {
     private int id;
-    private int articleId;
+    //private int articleId;
     private String lable;
+    private ArticleEntity article;
+
+    public ArticleEntity getArticle() {
+        return article;
+    }
+
+    public void setArticle(ArticleEntity article) {
+        this.article = article;
+    }
 
     public int getId() {
         return id;
@@ -16,13 +25,13 @@ public class LableEntity {
         this.id = id;
     }
 
-    public int getArticleId() {
-        return articleId;
-    }
-
-    public void setArticleId(int articleId) {
-        this.articleId = articleId;
-    }
+//    public int getArticleId() {
+//        return articleId;
+//    }
+//
+//    public void setArticleId(int articleId) {
+//        this.articleId = articleId;
+//    }
 
     public String getLable() {
         return lable;
@@ -40,7 +49,7 @@ public class LableEntity {
         LableEntity that = (LableEntity) o;
 
         if (id != that.id) return false;
-        if (articleId != that.articleId) return false;
+        //if (articleId != that.articleId) return false;
         if (lable != null ? !lable.equals(that.lable) : that.lable != null) return false;
 
         return true;
@@ -49,7 +58,7 @@ public class LableEntity {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + articleId;
+        //result = 31 * result + articleId;
         result = 31 * result + (lable != null ? lable.hashCode() : 0);
         return result;
     }

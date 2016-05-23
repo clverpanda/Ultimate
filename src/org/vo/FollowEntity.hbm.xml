@@ -5,7 +5,10 @@
 <hibernate-mapping>
 
     <class name="org.vo.FollowEntity" table="follow" schema="ultimate">
-        <id name="id" column="id"/>
+        <id name="id">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
         <property name="userid" column="userid"/>
         <property name="followUserid" column="follow_userid"/>
     </class>
