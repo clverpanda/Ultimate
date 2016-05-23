@@ -15,7 +15,7 @@ public class UserEntity {
     private Timestamp lastupdatetime;
     private UserRoleEntity role;
     private Set collects = new HashSet();
-
+//
     public Set getCollects() {
         return collects;
     }
