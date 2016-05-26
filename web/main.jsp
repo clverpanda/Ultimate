@@ -85,7 +85,7 @@
         </div>
         <div class="extra content">
           <button class="ui basic button"><a href="#">收藏</a></button>
-          <div class="ui right label">Coments<div class="detail">214</div>
+          <div class="ui right label">Comments<div class="detail">214</div>
           </div>
         </div>
       </div>

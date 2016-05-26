@@ -13,6 +13,8 @@ import org.springframework.stereotype.Repository;
 import org.vo.UserEntity;
 import org.vo.UserRoleEntity;
 
+import java.sql.Timestamp;
+
 @Repository
 public class SignupDaoImpl extends SuperDao implements SignupDao {
 
@@ -31,8 +33,10 @@ public class SignupDaoImpl extends SuperDao implements SignupDao {
             if(u!=null){
                 return false;
             }
+            Timestamp now=new Timestamp(System.currentTimeMillis());
             user.setUsername(username);
             user.setPassword(password);
+            user.setLastupdatetime(now);
             userRole.setRole(1);
             user.setRole(userRole);
             userRole.setUser(user);

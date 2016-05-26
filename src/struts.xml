@@ -14,5 +14,11 @@
             <result name="success">sign.jsp</result>
             <result name="error">index.jsp</result>
         </action>
+        <action name="exit" class="exitAction">
+            <result name="success">main.jsp</result>
+        </action>
+        <action name="initialize" class="initializeAction">
+            <result name="success">main.jsp</result>
+        </action>
     </package>
 </struts>

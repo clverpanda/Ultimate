@@ -51,4 +51,6 @@
 
        <bean id="signinAction" class="org.action.SigninAction"/>
        <bean id="signupAction" class="org.action.SignupAction"/>
+       <bean id="exitAction" class="org.action.ExitAction"/>
+       <bean id="initializeAction" class="org.action.InitializeAction"/>
 </beans>
