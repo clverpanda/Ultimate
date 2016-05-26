@@ -29,11 +29,11 @@
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item" href="http://v3.bootcss.com/examples/blog/#">主页</a>
-          <a class="blog-nav-item active" href="#">New features</a>
-          <a class="blog-nav-item" href="#">Press</a>
-          <a class="blog-nav-item" href="#">New hires</a>
-          <a class="blog-nav-item" href="#">About</a>
+          <a class="blog-nav-item active" href="#">主页</a>
+          <a class="blog-nav-item" href="#">发布</a>
+          <a class="blog-nav-item" href="#">资讯</a>
+          <a class="blog-nav-item" href="#">个人</a>
+          <a class="blog-nav-item" href="#">关于</a>
         </nav>
       </div>
     </div>
@@ -41,11 +41,10 @@
     </br>
     </br>
     <div class="ui secondary menu">
-      <a class="item">所有分类</a>
+      <a class="item active">所有分类</a>
       <a class="item">Windows</a>
-      <a class="item active">Android</a>
+      <a class="item">Android</a>
       <a class="item">Ios</a>
-      <a class="item">资讯</a>
       <a class="ui dropdown item">
         其他
         <i class="dropdown icon"></i>
@@ -62,16 +61,8 @@
             <i class="search link icon"></i>
           </div>
         </div>
-        <a class="ui dropdown item">
-          Username
-          <i class="dropdown icon"></i>
-          <div class="menu">
-            <div class="item">个人主页</div>
-            <div class="item">信息修改</div>
-            <div class="item">登出</div>
-          </div>
-        </a>
-        <a class="item">登录</a>
+        <a class="item" href="sign.jsp">登录</a>
+        <a class="item" href="sign.jsp">注册</a>
       </div>
     </div>
     <div class="ui divider"></div>
@@ -90,23 +81,22 @@
           </div>
         </div>
         <div class="image">
-            <image src="dummy.png"/>
+            <image src="logo.png"/>
         </div>
         <div class="extra content">
-          <div class="ui label">Coments<div class="detail">214</div>
+          <button class="ui basic button"><a href="#">收藏</a></button>
+          <div class="ui right label">Coments<div class="detail">214</div>
           </div>
         </div>
       </div>
     </div>
-    </div>
 
 
 
 
 
-      <p>
-        <a href="#">Back to top</a>
-      </p>
+
+
 
 
 

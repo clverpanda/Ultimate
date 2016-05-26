@@ -17,6 +17,7 @@
   <script src="Js/signin&signup.js"></script>
 </head>
 <body>
+
 <div class="ui middle aligned center aligned grid signin">
   <div class="column">
     <h2 class="ui teal image header">
@@ -25,7 +26,7 @@
         Log-in to your account
       </div>
     </h2>
-    <form class="ui large form" id="signin">
+    <form class="ui large form" action="signin.action">
       <div class="ui stacked segment">
         <div class="field">
           <div class="ui left icon input">
@@ -74,7 +75,7 @@
         Sign-up your account
       </div>
     </h2>
-    <form class="ui large form">
+    <form class="ui large form" action="signup.action">
       <div class="ui stacked segment">
         <div class="field">
           <div class="ui left icon input">
@@ -85,13 +86,13 @@
         <div class="field">
           <div class="ui left icon input">
             <i class="lock icon"></i>
-            <input type="password" name="password" placeholder="Password">
+            <input type="password" id="password" name="password" placeholder="Password">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="lock icon"></i>
-            <input type="password" name="confirm-password" placeholder="Confirm your password">
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password">
           </div>
         </div>
         <div class="ui fluid large teal submit button">Sign up</div>

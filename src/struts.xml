@@ -5,4 +5,14 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
+    <package name="default" extends="struts-default">
+        <action name="signin" class="signinAction">
+            <result name="success">signMain.jsp</result>
+            <result name="error">sign.jsp</result>
+        </action>
+        <action name="signup" class="signupAction">
+            <result name="success">sign.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+    </package>
 </struts>

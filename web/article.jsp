@@ -31,10 +31,10 @@
       <div class="container">
         <nav class="blog-nav">
           <a class="blog-nav-item active" href="http://v3.bootcss.com/examples/blog/#">主页</a>
-          <a class="blog-nav-item" href="#">New features</a>
-          <a class="blog-nav-item" href="#">Press</a>
-          <a class="blog-nav-item" href="#">New hires</a>
-          <a class="blog-nav-item" href="#">About</a>
+          <a class="blog-nav-item" href="#">发布</a>
+          <a class="blog-nav-item" href="#">资讯</a>
+          <a class="blog-nav-item" href="#">个人</a>
+          <a class="blog-nav-item" href="#">关于</a>
         </nav>
       </div>
     </div>
@@ -81,13 +81,12 @@
     <div class="container article-page">
       <div class="main">
             <div class="content-th">
-              <a class="ui tag label">New</a>
-              <a class="ui red tag label">即将到来</a>
-              <a class="ui teal tag label">精选</a>
+                <a class="ui tag label">资讯</a>
               <h1 id="articleTitle">鸟儿为什么这样红？</h1>
               <div class="content-th-info">
                     <a>FranklinWhite  </a>
                     <span>发表于 5分钟前</span>
+                    <button class="ui basic button"><a href="#">收藏</a></button>
               </div>
             </div>
             <div class="content-txt" id="articleContent">
@@ -104,7 +103,10 @@
             </div>
             <div id="commentsReplyer" class="cmts-do">
                 <h3 id="replyer">你的评论</h3>
-                <div class="ui segment"><p class="reply-info">请 <a href="#">登录</a> 发表评论</p></div>
+                <form action="#">
+                    <div class="ui segment"><p class="reply-info">请 <a href="#">登录</a> 发表评论</p></div>
+                    <button class="ui primary button">评论</button>
+                </form>
             </div>
           </div>
       <div class="side">

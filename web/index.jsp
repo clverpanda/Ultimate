@@ -10,6 +10,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+  用户名已被使用
   </body>
 </html>
