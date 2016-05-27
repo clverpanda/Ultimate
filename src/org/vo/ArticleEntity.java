@@ -11,15 +11,24 @@ public class ArticleEntity {
     private int articleId;
     private String title;
     private String content;
-    private String text;
+    private String context;
     private String download;
     //private int authorId;
     private Timestamp publishtime;
-    private boolean check;
+    private boolean checked;
     private UserEntity author;
+    private String imageUrl;
     private Set<LableEntity> lables = new HashSet<>();
     private Set<CommentEntity> comments = new HashSet<>();
     private Set<AssessEntity> assesses = new HashSet<>();
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
     public Set<CommentEntity> getComments() {
         return comments;
@@ -77,12 +86,21 @@ public class ArticleEntity {
         this.content = content;
     }
 
-    public String getText() {
-        return text;
+    public String getContext() {
+        return context;
     }
 
-    public void setText(String text) {
-        this.text = text;
+
+    public void setContext(String context) {
+        this.context = context;
+    }
+
+    public boolean isChecked() {
+        return checked;
+    }
+
+    public void setChecked(boolean checked) {
+        this.checked = checked;
     }
 
     public String getDownload() {
@@ -109,13 +127,7 @@ public class ArticleEntity {
         this.publishtime = publishtime;
     }
 
-    public boolean isCheck() {
-        return check;
-    }
 
-    public void setCheck(boolean check) {
-        this.check = check;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -126,10 +138,10 @@ public class ArticleEntity {
 
         if (articleId != that.articleId) return false;
         //if (authorId != that.authorId) return false;
-        if (check != that.check) return false;
+        if (checked != that.checked) return false;
         if (title != null ? !title.equals(that.title) : that.title != null) return false;
         if (content != null ? !content.equals(that.content) : that.content != null) return false;
-        if (text != null ? !text.equals(that.text) : that.text != null) return false;
+        if (context != null ? !context.equals(that.context) : that.context != null) return false;
         if (download != null ? !download.equals(that.download) : that.download != null) return false;
         if (publishtime != null ? !publishtime.equals(that.publishtime) : that.publishtime != null) return false;
 
@@ -141,11 +153,11 @@ public class ArticleEntity {
         int result = articleId;
         result = 31 * result + (title != null ? title.hashCode() : 0);
         result = 31 * result + (content != null ? content.hashCode() : 0);
-        result = 31 * result + (text != null ? text.hashCode() : 0);
+        result = 31 * result + (context != null ? context.hashCode() : 0);
         result = 31 * result + (download != null ? download.hashCode() : 0);
         //result = 31 * result + authorId;
         result = 31 * result + (publishtime != null ? publishtime.hashCode() : 0);
-        result = 31 * result + (check ? 1 : 0);
+        result = 31 * result + (checked ? 1 : 0);
         return result;
     }
 }

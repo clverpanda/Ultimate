@@ -32,6 +32,8 @@ public class SigninDaoImpl extends SuperDao implements SigninDao{
             if(tx!=null)
                 tx.rollback();
             e.printStackTrace();
+        }finally {
+            session.close();
         }
 
         return user;

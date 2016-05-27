@@ -27,6 +27,7 @@
           <unit-entry name="sessionFactory" value="dataSource" />
         </datasource-map>
         <naming-strategy-map />
+        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/hibernate.cfg.xml" />
       </configuration>
     </facet>
     <facet type="Spring" name="Spring">
@@ -34,11 +35,11 @@
         <fileset id="web dispatcher servlet context" name="MVC dispatcher servlet context" removed="true">
           <file>file://$MODULE_DIR$/web/WEB-INF/dispatcher-servlet.xml</file>
         </fileset>
-        <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/web/WEB-INF/applicationContext.xml</file>
-        </fileset>
         <fileset id="web application context" name="MVC application context" removed="true">
           <file>file://$MODULE_DIR$/web/WEB-INF/applicationContext.xml</file>
+        </fileset>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/spring-config.xml</file>
         </fileset>
       </configuration>
     </facet>
@@ -54,7 +55,16 @@
     <orderEntry type="library" name="Struts 2-2.3.20.1" level="project" />
     <orderEntry type="library" name="Spring-4.2.6.RELEASE" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.38-bin" level="project" />
-    <orderEntry type="library" name="struts2-spring-plugin-2.2.3.1" level="project" />
     <orderEntry type="library" name="spring-web-4.2.6.RELEASE" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/struts2-spring-plugin-2.3.20.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

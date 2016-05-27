@@ -23,31 +23,31 @@
     <h2 class="ui teal image header">
       <img src="logo.png" class="image">
       <div class="content">
-        Log-in to your account
+        登陆你的账户
       </div>
     </h2>
-    <form class="ui large form" action="signin.action">
+    <form class="ui large form" action="signin.action" method="post">
       <div class="ui stacked segment">
         <div class="field">
           <div class="ui left icon input">
             <i class="user icon"></i>
-            <input type="text" name="username" placeholder="Username">
+            <input type="text" name="username" placeholder="用户名">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="lock icon"></i>
-            <input type="password" name="password" placeholder="Password">
+            <input type="password" name="password" placeholder="密码">
           </div>
         </div>
-        <div class="ui fluid large teal submit button">Login</div>
+        <div class="ui fluid large teal submit button">登陆</div>
 
     <div class="ui divider"></div>
     <div class="footer">
       <!-- text plus button here -->
-      <div class="text"> Not a member? </div>
+      <div class="text"> 还不是会员? </div>
       <div class="ui vertical animated teal mini button signup">
-        <div class="visible content"> Join Us </div>
+        <div class="visible content"> 注册 </div>
         <div class="hidden content">
           <i class="users icon"></i>
         </div>
@@ -72,37 +72,37 @@
     <h2 class="ui teal image header">
       <img src="logo.png" class="image">
       <div class="content">
-        Sign-up your account
+        注册你的账户
       </div>
     </h2>
-    <form class="ui large form" action="signup.action">
+    <form class="ui large form" action="signup.action" method="post">
       <div class="ui stacked segment">
         <div class="field">
           <div class="ui left icon input">
             <i class="user icon"></i>
-            <input type="text" name="username" placeholder="Username">
+            <input type="text" name="username" placeholder="用户名">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="lock icon"></i>
-            <input type="password" id="password" name="password" placeholder="Password">
+            <input type="password" id="password" name="password" placeholder="密码">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="lock icon"></i>
-            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password">
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="再次输入密码">
           </div>
         </div>
-        <div class="ui fluid large teal submit button">Sign up</div>
+        <div class="ui fluid large teal submit button">注册</div>
 
     <div class="ui divider"></div>
     <div class="footer">
       <!-- text plus button here -->
-      <div class="text"> Already a member? </div>
+      <div class="text"> 已经是会员? </div>
       <div class="ui vertical animated teal mini button signin">
-        <div class="visible content"> Login </div>
+        <div class="visible content"> 登陆 </div>
         <div class="hidden content">
           <i class="users icon"></i>
         </div>

@@ -6,19 +6,22 @@
 
     <class name="org.vo.ArticleEntity" table="article" schema="ultimate">
         <id name="articleId">
-            <column name="article_id"/>
+            <column name="id"/>
             <generator class="identity"/>
         </id>
         <property name="title" column="title" not-null="true"/>
         <property name="content" column="content" not-null="true"/>
-        <property name="text" column="context" not-null="true"/>
+        <property name="context" column="context" not-null="true"/>
         <property name="download" column="download"/>
         <!--<property name="authorId" column="author_id"/>-->
         <property name="publishtime" column="publishtime"/>
-        <property name="check" type="java.lang.Boolean">
+        <property name="imageUrl" column="imageurl"/>
+        <property name="checked" type="java.lang.Boolean">
             <column name="isChecked" not-null="true"/>
         </property>
-        <many-to-one name="author" column="author_id" class="org.vo.UserEntity" cascade="all"/>
+
+
+        <many-to-one name="author" column="author_id" class="org.vo.UserEntity" cascade="all"  lazy="false"/>
 
         <set name="lables">
             <key column="article_id"/>

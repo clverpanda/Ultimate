@@ -33,6 +33,11 @@
             <one-to-many class="org.vo.CommentEntity"/>
         </set>
 
+        <set name="works" cascade="all">
+            <key column="author_id"></key>
+            <one-to-many class="org.vo.ArticleEntity"/>
+        </set>
+
         <set name="assesses" cascade="all">
             <key column="user_id"/>
             <one-to-many class="org.vo.AssessEntity"/>

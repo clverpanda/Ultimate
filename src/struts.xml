@@ -6,13 +6,32 @@
 
 <struts>
     <package name="default" extends="struts-default">
+
+        <default-action-ref name="index"/>
         <action name="signin" class="signinAction">
-            <result name="success">signMain.jsp</result>
+            <result name="success" type="chain">index</result>
             <result name="error">sign.jsp</result>
         </action>
         <action name="signup" class="signupAction">
             <result name="success">sign.jsp</result>
             <result name="error">index.jsp</result>
+        </action>
+        <action name="index" class="indexAction">
+            <result name="success">main.jsp</result>
+        </action>
+        <action name="publish" class="publishAction">
+            <result name="success" type="redirectAction">index</result>
+            <result name="error">index.jsp</result>
+        </action>
+        <action name="article" class="articleAction">
+            <result name="success">article.jsp</result>
+        </action>
+        <action name="personal" class="personalAction">
+            <result name="success">personalPage.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+        <action name="deleteArticle" class="delAction">
+            <result name="success" type="chain">index</result>
         </action>
     </package>
 </struts>

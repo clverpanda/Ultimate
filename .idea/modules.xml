@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ProjUltimate.iml" filepath="$PROJECT_DIR$/ProjUltimate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ueditor_back/ueditor_back.iml" filepath="$PROJECT_DIR$/ueditor_back/ueditor_back.iml" />
     </modules>
   </component>
 </project>

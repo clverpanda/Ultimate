@@ -46,6 +46,9 @@ public class SignupDaoImpl extends SuperDao implements SignupDao {
             e.printStackTrace();
             return false;
         }
+        finally {
+            session.close();
+        }
         return true;
 
     }

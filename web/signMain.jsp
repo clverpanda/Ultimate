@@ -39,7 +39,7 @@
         <div class="container">
             <nav class="blog-nav">
                 <a class="blog-nav-item active" href="#">主页</a>
-                <a class="blog-nav-item" href="#">发布</a>
+                <a class="blog-nav-item" href="publishArticle.jsp">发布</a>
                 <a class="blog-nav-item" href="#">资讯</a>
                 <a class="blog-nav-item" href="#">个人</a>
                 <a class="blog-nav-item" href="#">关于</a>

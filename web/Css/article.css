@@ -68,3 +68,10 @@
     margin-bottom: 10px;
     overflow: hidden;
 }
+
+img
+{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

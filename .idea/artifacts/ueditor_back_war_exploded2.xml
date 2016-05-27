@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="ueditor_back:war exploded2">
+    <output-path>$PROJECT_DIR$/out/artifacts/ueditor_back_war_exploded2</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="ueditor_back/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ueditor_back" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/ueditor_back/lib/json.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/ueditor_back/lib/ueditor-1.1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/ueditor_back/lib/commons-io-2.4.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/ueditor_back/lib/commons-codec-1.9.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/ueditor_back/lib/commons-fileupload-1.3.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/ueditor_back/lib/jsp-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/ueditor_back/lib/servlet-api.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

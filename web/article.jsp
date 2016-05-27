@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <!-- saved from url=(0037)http://v3.bootcss.com/examples/blog/# -->
@@ -18,6 +19,7 @@
     <!-- Custom styles for this template -->
     <link href="Css/main.css" rel="stylesheet">
     <link href="Css/article.css" rel="stylesheet">
+
    
     <link rel="stylesheet" href="semantic-ui/semantic/dist/semantic.min.css">
 
@@ -25,15 +27,16 @@
   </head>
 
   <body>
+  <s:set name="user" value="#session['user']"/>
     <nav class="navbar navbar-fixed-top">
 
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item active" href="http://v3.bootcss.com/examples/blog/#">主页</a>
-          <a class="blog-nav-item" href="#">发布</a>
+          <a class="blog-nav-item active" href="index.action">主页</a>
+          <a class="blog-nav-item" href="publishArticle.jsp">发布</a>
           <a class="blog-nav-item" href="#">资讯</a>
-          <a class="blog-nav-item" href="#">个人</a>
+          <a class="blog-nav-item" href="personal.action">个人</a>
           <a class="blog-nav-item" href="#">关于</a>
         </nav>
       </div>
@@ -63,16 +66,32 @@
             <i class="search link icon"></i>
           </div>
         </div>
-        <a class="ui dropdown item">
-          Username
-          <i class="dropdown icon"></i>
+
           <div class="menu">
-            <div class="item">个人主页</div>
-            <div class="item">信息修改</div>
-            <div class="item">登出</div>
+              <%
+                  if (session.getAttribute("user") == null)
+                  {
+              %>
+              <a class="item" href="sign.jsp">登录</a>
+              <a class="item" href="sign.jsp">注册</a>
+              <%
+              }
+              else
+              {
+              %>
+              <a class="ui dropdown item">
+                  <s:property value="#user.username"/>
+                  <i class="dropdown icon"></i>
+                  <div class="menu">
+                      <div class="item">个人主页</div>
+                      <div class="item">信息修改</div>
+                      <div class="item">登出</div>
+                  </div>
+              </a>
+              <%
+                  }
+              %>
           </div>
-        </a>
-        <a class="item">登录</a>
       </div>
     </div>
     <div class="ui divider"></div>
@@ -82,23 +101,16 @@
       <div class="main">
             <div class="content-th">
                 <a class="ui tag label">资讯</a>
-              <h1 id="articleTitle">鸟儿为什么这样红？</h1>
+              <h1 id="articleTitle"><s:property value="article.getArticleTitle()"/> </h1>
               <div class="content-th-info">
-                    <a>FranklinWhite  </a>
-                    <span>发表于 5分钟前</span>
+                    <a><s:property value="article.getArticleAuthor()"/>  </a>
+                    <span><s:property value="article.getArticlePublishTime()"/></span>
                     <button class="ui basic button"><a href="#">收藏</a></button>
               </div>
             </div>
             <div class="content-txt" id="articleContent">
-              <div class="document">
-                <p>在很多小鸟眼中，鲜艳的红色是魅力的代名词，它在鸟类社交和伴侣选择过程中起到了关键的作用。在挑选另一半时，很多雌性鸟类都会偏好那些羽毛或鸟喙颜色更鲜红的雄性。</p>
-                <p>在很多小鸟眼中，鲜艳的红色是魅力的代名词，它在鸟类社交和伴侣选择过程中起到了关键的作用。在挑选另一半时，很多雌性鸟类都会偏好那些羽毛或鸟喙颜色更鲜红的雄性。</p>
-                <p>在很多小鸟眼中，鲜艳的红色是魅力的代名词，它在鸟类社交和伴侣选择过程中起到了关键的作用。在挑选另一半时，很多雌性鸟类都会偏好那些羽毛或鸟喙颜色更鲜红的雄性。</p>
-                <p>在很多小鸟眼中，鲜艳的红色是魅力的代名词，它在鸟类社交和伴侣选择过程中起到了关键的作用。在挑选另一半时，很多雌性鸟类都会偏好那些羽毛或鸟喙颜色更鲜红的雄性。</p>
-                <p>在很多小鸟眼中，鲜艳的红色是魅力的代名词，它在鸟类社交和伴侣选择过程中起到了关键的作用。在挑选另一半时，很多雌性鸟类都会偏好那些羽毛或鸟喙颜色更鲜红的雄性。</p>
-                <p>在很多小鸟眼中，鲜艳的红色是魅力的代名词，它在鸟类社交和伴侣选择过程中起到了关键的作用。在挑选另一半时，很多雌性鸟类都会偏好那些羽毛或鸟喙颜色更鲜红的雄性。</p>
-                <p>在很多小鸟眼中，鲜艳的红色是魅力的代名词，它在鸟类社交和伴侣选择过程中起到了关键的作用。在挑选另一半时，很多雌性鸟类都会偏好那些羽毛或鸟喙颜色更鲜红的雄性。</p>
-                <p>在很多小鸟眼中，鲜艳的红色是魅力的代名词，它在鸟类社交和伴侣选择过程中起到了关键的作用。在挑选另一半时，很多雌性鸟类都会偏好那些羽毛或鸟喙颜色更鲜红的雄性。</p>
+              <div class="document" id="articleContentDoc">
+                  <s:property value="article.getArticleContent()" escape="false"/>
               </div>
             </div>
             <div id="commentsReplyer" class="cmts-do">
@@ -112,14 +124,15 @@
       <div class="side">
         <div class="ui card">
             <div class="image">
-              <img src="/images/avatar2/large/kristy.png">
+              <%--<img src="/images/avatar2/large/kristy.png">--%>
+                <p>用户资料</p>
             </div>
             <div class="content">
-              <a class="header">Kristy</a>
+              <a class="header"><s:property value="article.getArticleAuthor()"/></a>
               <div class="meta">
-              <span class="date">2013年加入</span>
+              <span class="date">2016年加入</span>
             </div>
-            <div class="description">Kristy is an art director living in New York. </div>
+            <div class="description">clverpanda哈哈哈哈</div>
             </div>
             <div class="extra content">
               <a><i class="user icon"></i> 22 Friends </a>

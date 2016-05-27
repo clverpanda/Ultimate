@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <!-- saved from url=(0037)http://v3.bootcss.com/examples/blog/# -->
 <html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -9,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Main</title>
+    <title>主页</title>
 
 
     <!-- Bootstrap core CSS -->
@@ -24,15 +25,17 @@
   </head>
 
   <body>
+  <s:action name="index"/>
+  <s:set name="user" value="#session['user']"/>
     <nav class="navbar navbar-fixed-top">
 
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item active" href="#">主页</a>
-          <a class="blog-nav-item" href="#">发布</a>
+          <a class="blog-nav-item active" href="index.action">主页</a>
+          <a class="blog-nav-item" href="publishArticle.jsp">发布</a>
           <a class="blog-nav-item" href="#">资讯</a>
-          <a class="blog-nav-item" href="#">个人</a>
+          <a class="blog-nav-item" href="personal.action">个人</a>
           <a class="blog-nav-item" href="#">关于</a>
         </nav>
       </div>
@@ -57,38 +60,75 @@
       <div class="right secondary menu">
         <div class="item">
           <div class="ui icon input">
-            <input type="text" placeholder="Search...">
+            <input type="text" placeholder="搜索">
             <i class="search link icon"></i>
           </div>
         </div>
+        <%
+        if (session.getAttribute("user") == null)
+        {
+        %>
         <a class="item" href="sign.jsp">登录</a>
         <a class="item" href="sign.jsp">注册</a>
+        <%
+          }
+          else
+          {
+        %>
+        <a class="ui dropdown item">
+          <s:property value="#user.username"/>
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            <div class="item">个人主页</div>
+            <div class="item">信息修改</div>
+            <div class="item">登出</div>
+          </div>
+        </a>
+        <%
+          }
+        %>
       </div>
     </div>
     <div class="ui divider"></div>
     <div class="contain">
+
+
     <div class="ui three cards">
+
+      <s:iterator value="indexViewModels" id="indexViewModel">
+        <s:url action="article" id="articleUrl">
+          <s:param name="articleId" value="#indexViewModel.getArticleId()"/>
+        </s:url>
       <div class="ui card">
         <div class="content">
-          <a class="ui blue right ribbon label">Windows</a> 
-          <div class="header">可爱的小狗</div>
-            <div class="meta">
-              <span class="right floated time">2 天前</span>
-              <div class="author">Matt </div>
-            </div>
+          <a class="ui blue right ribbon label">Windows</a>
+          <div class="header">
+            <s:a href="%{articleUrl}">
+            <s:property value="#indexViewModel.getArticleTitle()"/>
+            </s:a>
+          </div>
+          <div class="meta">
+            <span class="right floated time"><s:property value="#indexViewModel.getArticlePublishDate()"/></span>
+            <div class="author"><s:property value="#indexViewModel.getArticleAuthor()"/> </div>
+          </div>
           <div class="description">
             <p></p>
           </div>
         </div>
         <div class="image">
-            <image src="logo.png"/>
+
+          <%--<image src="logo.png"/>--%>
+          <img src="<s:property value="#indexViewModel.getArticleImgPath()"/>" alt="本文没有图片没有图片">
         </div>
+
         <div class="extra content">
           <button class="ui basic button"><a href="#">收藏</a></button>
-          <div class="ui right label">Coments<div class="detail">214</div>
+          <div class="ui right label">Coments<div class="detail"><s:property value="#indexViewModel.getArticleCommentCount()"/></div>
           </div>
         </div>
       </div>
+      </s:iterator>
+
     </div>
 
 

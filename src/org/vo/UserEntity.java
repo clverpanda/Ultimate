@@ -18,6 +18,15 @@ public class UserEntity {
     private Set<UserEntity> follows = new HashSet<>();
     private Set<CommentEntity> comments = new HashSet<>();
     private Set<AssessEntity> assesses = new HashSet<>();
+    private Set<ArticleEntity> works = new HashSet<>();
+
+    public Set<ArticleEntity> getWorks() {
+        return works;
+    }
+
+    public void setWorks(Set<ArticleEntity> works) {
+        this.works = works;
+    }
 
     public Set<CommentEntity> getComments() {
         return comments;
